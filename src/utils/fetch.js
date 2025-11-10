@@ -1,8 +1,7 @@
 import store from "../store";
-const apiUrl = process.env.REACT_APP_API_URL;
 
 export const getAsync = (url) =>
-  fetch(`${apiUrl}${url}`, {
+  fetch(`${process.env.REACT_APP_API_URL}${url}`, {
     headers: {
       Authorization: `Bearer ${store.getState().auth.token}`,
     },
@@ -11,7 +10,7 @@ export const getAsync = (url) =>
   });
 
 export const deleteAsync = (url) =>
-  fetch(`${apiUrl}${url}`, {
+  fetch(`${process.env.REACT_APP_API_URL}${url}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${store.getState().auth.token}`,
@@ -21,7 +20,7 @@ export const deleteAsync = (url) =>
   });
 
 export const postAsJsonAsync = (url, body) => {
-  return fetch(`${apiUrl}${url}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}${url}`, {
     method: "POST",
 
     headers: {
@@ -48,7 +47,7 @@ export const postAsJsonAsync = (url, body) => {
 };
 
 export const postAsFormAsync = (url, body) => {
-  return fetch(`${apiUrl}${url}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}${url}`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${store.getState().auth.token}`,
@@ -73,7 +72,7 @@ export const postAsFormAsync = (url, body) => {
 };
 
 export const putAsJsonAsync = (url, body) => {
-  return fetch(`${apiUrl}${url}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}${url}`, {
     method: "PUT",
 
     headers: {
@@ -100,7 +99,7 @@ export const putAsJsonAsync = (url, body) => {
 };
 
 export const putAsFormAsync = (url, body) => {
-  return fetch(`${apiUrl}${url}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}${url}`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${store.getState().auth.token}`,
